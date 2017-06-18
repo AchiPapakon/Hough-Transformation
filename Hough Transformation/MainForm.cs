@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Imaging;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -302,6 +303,8 @@ namespace Hough_Transformation
 
         private void Open(string gray)
         {
+            openFileDialog1.InitialDirectory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.Parent.FullName;
+            openFileDialog1.InitialDirectory += @"\input images";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 opened = true;
